@@ -60,7 +60,6 @@ const Index = () => {
                 sx={{
                     width: "100%",
                     maxWidth: 700,
-                    bgcolor: "background.paper",
                     borderRadius: "30px 0 30px 0",
                     padding: "30px",
                     boxShadow: 3,
