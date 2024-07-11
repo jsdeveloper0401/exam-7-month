@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { Button, ListItemText } from "@mui/material";
+import { ListItemText } from "@mui/material";
 import routes from "../router/routes";
 import Logo from "../assets/Logo.svg";
 import AccountMenu from "@modal/account-menu";
@@ -23,8 +23,8 @@ const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
     const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-    const [isClosing, setIsClosing] = React.useState(false);
+    const [mobileOpen, setMobileOpen] = useState(false);
+    const [isClosing, setIsClosing] = useState(false);
     const { pathname } = useLocation();
     const navigate = useNavigate();
 
@@ -43,7 +43,7 @@ function ResponsiveDrawer(props) {
         }
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         const route = routes.find((route) => route.path === pathname);
         if (route) {
             document.title = route.content;
